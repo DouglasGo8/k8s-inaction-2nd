@@ -1,0 +1,32 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  creationTimestamp: null
+  labels:
+    run: kubia
+  name: kubia
+spec:
+  replicas: 1
+  selector:
+    run: kubia
+  strategy:
+    resources: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: kubia
+    spec:
+      containers:
+      - image: douglasdb/quarkus-hello:latest
+        name: kubia
+        resources: {}
+  test: false
+  triggers: null
+status:
+  availableReplicas: 0
+  latestVersion: 0
+  observedGeneration: 0
+  replicas: 0
+  unavailableReplicas: 0
+  updatedReplicas: 0

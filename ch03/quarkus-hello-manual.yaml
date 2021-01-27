@@ -1,0 +1,22 @@
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: quarkus-hello-pod
+ # default OKD namespace
+ namespace: myproject
+spec:
+ containers:
+ - image: douglasdb/quarkus-hello:latest
+   name: quarkus-hello
+   ports:
+   - containerPort: 8080
+     protocol: TCP
+ resources:
+  limits:
+   memory: "200Mi"
+   cpu: "200m"
+  requests:
+   memory: "100Mi"
+   cpu: "150Mi"
